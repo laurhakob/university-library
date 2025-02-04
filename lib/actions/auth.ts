@@ -8,6 +8,8 @@ import { signIn } from "@/auth";
 import { headers } from "next/headers";
 import ratelimit from "../ratelimit";
 import { redirect } from "next/navigation";
+import { workflowClient } from "../workflow";
+import config from "../config";
 
 export const signInWithCredentials = async (
   params: Pick<AuthCredentials, "email" | "password">
@@ -65,6 +67,18 @@ export const signUp = async (params: AuthCredentials) => {
       password: hashedPassword,
       universityCard,
     });
+
+    // stexic avelacav
+
+    await workflowClient.trigger({
+      url: `${config.env.prodApiEndpoint}/api/workflow/onboarding`,
+      body: {
+        email,
+        fullName,
+      },
+    });
+
+    // minchev stex
 
     await signInWithCredentials({ email, password });
 
