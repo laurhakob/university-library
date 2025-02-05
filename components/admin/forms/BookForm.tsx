@@ -265,7 +265,7 @@ const BookForm = ({ type, ...book }: Props) => {
         />
 
         <Button type="submit" className="book-form_btn text-white">
-          Add Book to Library
+          Add Bookk to Library
         </Button>
       </form>
     </Form>
