@@ -15,6 +15,13 @@
       "when": 1738876184777,
       "tag": "0001_normal_scream",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1738913206727,
+      "tag": "0002_unknown_mysterio",
+      "breakpoints": true
     }
   ]
 }
